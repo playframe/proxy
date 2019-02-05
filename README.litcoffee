@@ -20,7 +20,7 @@ const handler = (method, arg1, arg2)=>
 
 
 const Proxy = proxy(methods)
-const trap = Proxy handler
+const trap = Proxy(handler)
 trap.run('very', 'fast') // log> run(very, fast)
 ```
 
