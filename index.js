@@ -30,7 +30,7 @@ var create;
 
 ({create} = Object);
 
-// High level function takes list of methods,
+// Let's define a higher order function takes a list of methods,
 module.exports = (methods) => {
   var proto;
   // creates a prototype with traps calling a handler function
@@ -41,7 +41,8 @@ module.exports = (methods) => {
       return this._h(method, x, y);
     };
   });
-  // and returns a factory function, that creates a proxy for given handle
+  // and returns a factory function,
+  // that creates a proxy for given handle
   return (handle) => {
     return create(proto, {
       _h: {

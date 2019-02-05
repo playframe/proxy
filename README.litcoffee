@@ -30,7 +30,7 @@ Caching `Object.create` for perf and minification
 
     {create} = Object
 
-High level function takes list of methods,
+Let's define a higher order function takes a list of methods,
 
     module.exports = (methods)=>
 
@@ -42,6 +42,7 @@ passing method name and 2 arguments
         proto[method] = (x, y)->
           @_h method, x, y
 
-and returns a factory function, that creates a proxy for given handle
+and returns a factory function,
+that creates a proxy for given handle
 
       (handle)=> create proto, _h: value: handle
